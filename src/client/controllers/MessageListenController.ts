@@ -10,7 +10,7 @@ interface DataMessage {
   ack(): void;
 }
 
-class MessageLitenController {
+class MessageListenController {
   public async create(req: Request, res: Response): Promise<Response> {
     const { subscriptionName, timeout = 60 } = req.body;
 
@@ -37,4 +37,4 @@ class MessageLitenController {
   }
 }
 
-export default new MessageLitenController();
+export default new MessageListenController();
