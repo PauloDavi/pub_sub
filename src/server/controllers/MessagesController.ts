@@ -8,7 +8,9 @@ class MessagesController {
 
     const dataBuffer = Buffer.from(message);
 
-    const messageId = await pubsub.topic(topicName).publish(dataBuffer);
+    const messageId = await pubsub
+      .topic(topicName || process.env.DEFAULT_TOPIC_NAME)
+      .publish(dataBuffer);
     return res.json({ messageId });
   }
 }

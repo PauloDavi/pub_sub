@@ -25,7 +25,9 @@ class ClientPubSub implements IPubSub {
       keyFilename: resolve(__dirname, '..', '..', '..', 'key.json'),
     });
 
-    const subscription = this.pubsub.subscription('sub_one');
+    const subscription = this.pubsub.subscription(
+      process.env.SUBSCRIPETION_NAME || '',
+    );
 
     const messageHandler = async (message: DataMessage) => {
       await Message.create({

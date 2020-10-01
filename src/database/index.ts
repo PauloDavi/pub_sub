@@ -13,7 +13,7 @@ class Database implements IDatabase {
 
   async init() {
     this.mongoConnection = await mongoose.connect(
-      'mongodb+srv://pauloDavi:50paulo50@cluster0.iimhn.mongodb.net/test?retryWrites=true&w=majority',
+      process.env.URI_CONNECTION || '',
       {
         useNewUrlParser: true,
         useFindAndModify: true,
