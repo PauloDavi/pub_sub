@@ -26,7 +26,7 @@ class ClientPubSub implements IPubSub {
     });
 
     const subscription = this.pubsub.subscription(
-      process.env.SUBSCRIPETION_NAME || '',
+      process.env.SUBSCRIPTION_NAME || '',
     );
 
     const messageHandler = async (message: DataMessage) => {
