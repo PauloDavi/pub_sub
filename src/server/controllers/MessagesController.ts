@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 
-import pubsub from '../../services/pubsub';
+import pubsub from '../services/pubsubServer';
 
 class MessagesController {
   public async create(req: Request, res: Response): Promise<Response> {

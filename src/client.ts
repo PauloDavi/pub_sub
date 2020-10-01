@@ -1,6 +1,9 @@
 import express from 'express';
 import routes from './client/routes';
 
+import './database';
+import './client/services/pubsubClient';
+
 const app = express();
 
 app.use(express.json());

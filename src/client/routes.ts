@@ -1,9 +1,11 @@
 import { Router } from 'express';
 
-import messageListenController from './controllers/MessageListenController';
+import messageController from './controllers/MessageController';
 
 const router = Router();
 
-router.post('/listen', messageListenController.create);
+router.get('/messages/:id', messageController.find);
+router.get('/messages', messageController.list);
+router.delete('/messages/:id', messageController.delete);
 
 export default router;
